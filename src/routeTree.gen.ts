@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as VideoRouteImport } from './routes/video'
 import { Route as ApiVideoIdRouteImport } from './routes/api/video/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideoRoute = VideoRouteImport.update({
+  id: '/video',
+  path: '/video',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiVideoIdRoute = ApiVideoIdRouteImport.update({
@@ -25,27 +31,31 @@ const ApiVideoIdRoute = ApiVideoIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/video': typeof VideoRoute
   '/api/video/$id': typeof ApiVideoIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/video': typeof VideoRoute
   '/api/video/$id': typeof ApiVideoIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/video': typeof VideoRoute
   '/api/video/$id': typeof ApiVideoIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/video/$id'
+  fullPaths: '/' | '/video' | '/api/video/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/video/$id'
-  id: '__root__' | '/' | '/api/video/$id'
+  to: '/' | '/video' | '/api/video/$id'
+  id: '__root__' | '/' | '/video' | '/api/video/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  VideoRoute: typeof VideoRoute
   ApiVideoIdRoute: typeof ApiVideoIdRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video': {
+      id: '/video'
+      path: '/video'
+      fullPath: '/video'
+      preLoaderRoute: typeof VideoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/video/$id': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  VideoRoute: VideoRoute,
   ApiVideoIdRoute: ApiVideoIdRoute,
 }
 export const routeTree = rootRouteImport
