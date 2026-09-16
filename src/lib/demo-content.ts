@@ -87,10 +87,12 @@ export const demoGallery: DemoItem[] = [
   },
 ];
 
+const pick = (i: number) => demoGallery[i] as DemoItem;
+
 export const demoCreations: DemoItem[] = [
-  { ...demoGallery[0], creator: "You", createdAt: "Today" },
-  { ...demoGallery[3], creator: "You", createdAt: "Today" },
-  { ...demoGallery[4], creator: "You", createdAt: "Yesterday" },
+  { ...pick(0), creator: "You", createdAt: "Today" },
+  { ...pick(3), creator: "You", createdAt: "Today" },
+  { ...pick(4), creator: "You", createdAt: "Yesterday" },
   {
     id: "a1",
     title: "Narration — savanna documentary",

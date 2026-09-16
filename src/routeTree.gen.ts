@@ -10,8 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AvatarRouteImport } from './routes/avatar'
+import { Route as CreateRouteImport } from './routes/create'
+import { Route as CreationsRouteImport } from './routes/creations'
+import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as HelpRouteImport } from './routes/help'
 import { Route as ImageRouteImport } from './routes/image'
+import { Route as ImageVideoRouteImport } from './routes/image-video'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ToolsRouteImport } from './routes/tools'
 import { Route as VideoRouteImport } from './routes/video'
+import { Route as VoiceRouteImport } from './routes/voice'
 import { Route as ApiVideoIdRouteImport } from './routes/api/video/$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -19,14 +33,84 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvatarRoute = AvatarRouteImport.update({
+  id: '/avatar',
+  path: '/avatar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreateRoute = CreateRouteImport.update({
+  id: '/create',
+  path: '/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreationsRoute = CreationsRouteImport.update({
+  id: '/creations',
+  path: '/creations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExploreRoute = ExploreRouteImport.update({
+  id: '/explore',
+  path: '/explore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImageRoute = ImageRouteImport.update({
   id: '/image',
   path: '/image',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImageVideoRoute = ImageVideoRouteImport.update({
+  id: '/image-video',
+  path: '/image-video',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsRoute = ToolsRouteImport.update({
+  id: '/tools',
+  path: '/tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VideoRoute = VideoRouteImport.update({
   id: '/video',
   path: '/video',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VoiceRoute = VoiceRouteImport.update({
+  id: '/voice',
+  path: '/voice',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiVideoIdRoute = ApiVideoIdRouteImport.update({
@@ -37,35 +121,146 @@ const ApiVideoIdRoute = ApiVideoIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/avatar': typeof AvatarRoute
+  '/create': typeof CreateRoute
+  '/creations': typeof CreationsRoute
+  '/explore': typeof ExploreRoute
+  '/help': typeof HelpRoute
   '/image': typeof ImageRoute
+  '/image-video': typeof ImageVideoRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/terms': typeof TermsRoute
+  '/tools': typeof ToolsRoute
   '/video': typeof VideoRoute
+  '/voice': typeof VoiceRoute
   '/api/video/$id': typeof ApiVideoIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/avatar': typeof AvatarRoute
+  '/create': typeof CreateRoute
+  '/creations': typeof CreationsRoute
+  '/explore': typeof ExploreRoute
+  '/help': typeof HelpRoute
   '/image': typeof ImageRoute
+  '/image-video': typeof ImageVideoRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/terms': typeof TermsRoute
+  '/tools': typeof ToolsRoute
   '/video': typeof VideoRoute
+  '/voice': typeof VoiceRoute
   '/api/video/$id': typeof ApiVideoIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/avatar': typeof AvatarRoute
+  '/create': typeof CreateRoute
+  '/creations': typeof CreationsRoute
+  '/explore': typeof ExploreRoute
+  '/help': typeof HelpRoute
   '/image': typeof ImageRoute
+  '/image-video': typeof ImageVideoRoute
+  '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/terms': typeof TermsRoute
+  '/tools': typeof ToolsRoute
   '/video': typeof VideoRoute
+  '/voice': typeof VoiceRoute
   '/api/video/$id': typeof ApiVideoIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/image' | '/video' | '/api/video/$id'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/avatar'
+    | '/create'
+    | '/creations'
+    | '/explore'
+    | '/help'
+    | '/image'
+    | '/image-video'
+    | '/login'
+    | '/privacy'
+    | '/profile'
+    | '/settings'
+    | '/terms'
+    | '/tools'
+    | '/video'
+    | '/voice'
+    | '/api/video/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/image' | '/video' | '/api/video/$id'
-  id: '__root__' | '/' | '/image' | '/video' | '/api/video/$id'
+  to:
+    | '/'
+    | '/about'
+    | '/avatar'
+    | '/create'
+    | '/creations'
+    | '/explore'
+    | '/help'
+    | '/image'
+    | '/image-video'
+    | '/login'
+    | '/privacy'
+    | '/profile'
+    | '/settings'
+    | '/terms'
+    | '/tools'
+    | '/video'
+    | '/voice'
+    | '/api/video/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/avatar'
+    | '/create'
+    | '/creations'
+    | '/explore'
+    | '/help'
+    | '/image'
+    | '/image-video'
+    | '/login'
+    | '/privacy'
+    | '/profile'
+    | '/settings'
+    | '/terms'
+    | '/tools'
+    | '/video'
+    | '/voice'
+    | '/api/video/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AvatarRoute: typeof AvatarRoute
+  CreateRoute: typeof CreateRoute
+  CreationsRoute: typeof CreationsRoute
+  ExploreRoute: typeof ExploreRoute
+  HelpRoute: typeof HelpRoute
   ImageRoute: typeof ImageRoute
+  ImageVideoRoute: typeof ImageVideoRoute
+  LoginRoute: typeof LoginRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProfileRoute: typeof ProfileRoute
+  SettingsRoute: typeof SettingsRoute
+  TermsRoute: typeof TermsRoute
+  ToolsRoute: typeof ToolsRoute
   VideoRoute: typeof VideoRoute
+  VoiceRoute: typeof VoiceRoute
   ApiVideoIdRoute: typeof ApiVideoIdRoute
 }
 
@@ -78,6 +273,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/avatar': {
+      id: '/avatar'
+      path: '/avatar'
+      fullPath: '/avatar'
+      preLoaderRoute: typeof AvatarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/create': {
+      id: '/create'
+      path: '/create'
+      fullPath: '/create'
+      preLoaderRoute: typeof CreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creations': {
+      id: '/creations'
+      path: '/creations'
+      fullPath: '/creations'
+      preLoaderRoute: typeof CreationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explore': {
+      id: '/explore'
+      path: '/explore'
+      fullPath: '/explore'
+      preLoaderRoute: typeof ExploreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image': {
       id: '/image'
       path: '/image'
@@ -85,11 +322,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-video': {
+      id: '/image-video'
+      path: '/image-video'
+      fullPath: '/image-video'
+      preLoaderRoute: typeof ImageVideoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools': {
+      id: '/tools'
+      path: '/tools'
+      fullPath: '/tools'
+      preLoaderRoute: typeof ToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/video': {
       id: '/video'
       path: '/video'
       fullPath: '/video'
       preLoaderRoute: typeof VideoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/voice': {
+      id: '/voice'
+      path: '/voice'
+      fullPath: '/voice'
+      preLoaderRoute: typeof VoiceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/video/$id': {
@@ -104,8 +397,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AvatarRoute: AvatarRoute,
+  CreateRoute: CreateRoute,
+  CreationsRoute: CreationsRoute,
+  ExploreRoute: ExploreRoute,
+  HelpRoute: HelpRoute,
   ImageRoute: ImageRoute,
+  ImageVideoRoute: ImageVideoRoute,
+  LoginRoute: LoginRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProfileRoute: ProfileRoute,
+  SettingsRoute: SettingsRoute,
+  TermsRoute: TermsRoute,
+  ToolsRoute: ToolsRoute,
   VideoRoute: VideoRoute,
+  VoiceRoute: VoiceRoute,
   ApiVideoIdRoute: ApiVideoIdRoute,
 }
 export const routeTree = rootRouteImport
